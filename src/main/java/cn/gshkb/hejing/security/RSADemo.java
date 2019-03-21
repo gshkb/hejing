@@ -1,9 +1,4 @@
 package cn.gshkb.hejing.security;
-
-
-
-
-
 import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.*;
@@ -12,8 +7,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.HashMap;
-import java.util.Map;
+
 
 /**
  * 与对称加密算法不同，非对称加密算法需要两个密钥：公开密钥（publickey）和私有密钥 （privatekey）。

@@ -1,4 +1,4 @@
-package cn.gshkb.hejing;
+package cn.gshkb.hejing.interview;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class HejingApplicationTests {
+public class InterviewQuestionsApplicationTests {
 
 	@Test
 	public void contextLoads() {

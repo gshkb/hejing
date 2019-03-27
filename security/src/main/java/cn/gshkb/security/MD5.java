@@ -1,4 +1,4 @@
-package cn.gshkb.hejing.security;
+package cn.gshkb.security;
 
 /**
  * #### 不利用Java提供的java.security.MessageDigest类实现MD5算法

@@ -8,15 +8,12 @@
 		<version>2.1.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>cn.gshkb</groupId>
-	<artifactId>hejing</artifactId>
+	<groupId>cn.gshkb.hejing</groupId>
+	<artifactId>interview-questions</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hejing</name>
+	<name>interview-questions</name>
 	<description>Demo project for Spring Boot</description>
-    <modules>
-		<module>security</module>
-		<module>interview-questions</module>
-	</modules>
+
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -31,16 +28,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>1.11</version>
-		</dependency>
-		<dependency>
-			<groupId>org.bouncycastle</groupId>
-			<artifactId>bcprov-jdk15on</artifactId>
-			<version>1.55</version>
 		</dependency>
 	</dependencies>
 

@@ -1,4 +1,4 @@
-package cn.gshkb.hejing.security;
+package cn.gshkb.security;
 
 import javax.crypto.*;
 import javax.crypto.spec.*;

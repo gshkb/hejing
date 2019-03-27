@@ -1,4 +1,4 @@
-package cn.gshkb.hejing.security;
+package cn.gshkb.security;
 
 
 import java.security.Key;

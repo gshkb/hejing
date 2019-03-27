@@ -1,4 +1,4 @@
-package cn.gshkb.hejing.security;
+package cn.gshkb.security;
 import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.*;

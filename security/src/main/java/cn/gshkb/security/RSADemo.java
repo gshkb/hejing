@@ -1,5 +1,6 @@
 package cn.gshkb.security;
 import org.apache.commons.codec.binary.Base64;
+import org.omg.CORBA.*;
 
 import javax.crypto.*;
 import java.security.*;
@@ -7,6 +8,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.*;
 
 
 /**
@@ -163,6 +165,7 @@ public class RSADemo {
 		// 对数据解密
 		Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm());
 		cipher.init(Cipher.DECRYPT_MODE, publicKey);
+		new ConcurrentHashMap<>();
 		return cipher.doFinal(data);
 	}
 

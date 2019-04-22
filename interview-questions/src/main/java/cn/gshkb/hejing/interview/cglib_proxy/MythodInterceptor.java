@@ -16,8 +16,10 @@ public class MythodInterceptor implements MethodInterceptor {
 	public Object createProxy(Object target) {
 		this.obj = target;
 		Enhancer enhancer = new Enhancer();
-		enhancer.setSuperclass(this.obj.getClass());// 设置代理目标
-		enhancer.setCallback(this);// 设置回调
+		enhancer.setSuperclass(this.obj.getClass());
+		// 设置代理目标
+		enhancer.setCallback(this);
+		// 设置回调
 		enhancer.setClassLoader(target.getClass().getClassLoader());
 		return enhancer.create();
 	}

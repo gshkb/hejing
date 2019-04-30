@@ -18,6 +18,7 @@
 		<module>interview-questions</module>
 		<module>sharding-sphere</module>
 		<module>springboot-aop</module>
+		<module>spring-trasaction</module>
 	</modules>
 	<properties>
 		<java.version>1.8</java.version>
@@ -50,7 +51,6 @@
 			<artifactId>sharding-core</artifactId>
 			<version>3.1.0</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>

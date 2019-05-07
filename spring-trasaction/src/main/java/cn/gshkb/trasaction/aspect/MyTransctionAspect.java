@@ -14,8 +14,13 @@ import org.springframework.stereotype.*;
 public class MyTransctionAspect implements Orders {
 
 	@Around("@annotation(cn.gshkb.trasaction.annotation.MyTransactional)")
-	public void around(ProceedingJoinPoint joinPoint){
+	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
 		//多层切面的优先级的问题
 			joinPoint.proceed();
+	}
+
+	@Override
+	public int getOrder() {
+		return 0;
 	}
 }

@@ -1,4 +1,4 @@
-package cn.gshkb.springelasticsearch;
+package cn.gshkb.elasticsearch;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

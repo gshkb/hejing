@@ -1,4 +1,4 @@
-package cn.gshkb.springelasticsearch;
+package cn.gshkb.elasticsearch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

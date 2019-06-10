@@ -15,8 +15,8 @@ import org.springframework.data.elasticsearch.repository.config.*;
 @EnableElasticsearchRepositories(basePackages = "org/springframework/data/elasticsearch/repositories")
 public class Config {
 
-	@Bean
+	/*@Bean
 	public ElasticsearchOperations elasticsearchTemplate() {
 
-	}
+	}*/
 }

@@ -24,6 +24,7 @@
 		<module>consumer</module>
 		<module>producer</module>
 		<module>spring-elasticsearch</module>
+		<module>leetcode</module>
 	</modules>
 	<properties>
 		<java.version>1.8</java.version>

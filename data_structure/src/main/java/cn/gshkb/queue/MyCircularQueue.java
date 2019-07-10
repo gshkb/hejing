@@ -20,73 +20,69 @@ import java.util.*;
  **/
 public class  MyCircularQueue<T> {
 
-	private int[] datas;
-    //数组长度临时变量
-	private int length = 0;
-	//存入指针
-	private int fp = 0;
-    //取出指针
-	private int lp = 0;
-
+	private int[] data;
+	private int head;
+	private int tail;
+	private int size;
 
 	/** Initialize your data structure here. Set the size of the queue to be k. */
 	public MyCircularQueue(int k) {
-       this.datas = new int[k];
-       this.length = k;
+		data = new int[k];
+		head = -1;
+		tail = -1;
+		size = k;
 	}
 
 	/** Insert an element into the circular queue. Return true if the operation is successful. */
 	public boolean enQueue(int value) {
-		if (isFull()){
+		if (isFull() == true) {
 			return false;
 		}
-            datas[fp] = value;
-		    fp++;
-		    length++;
+		if (isEmpty() == true) {
+			head = 0;
+		}
+		tail = (tail + 1) % size;
+		data[tail] = value;
 		return true;
 	}
 
 	/** Delete an element from the circular queue. Return true if the operation is successful. */
 	public boolean deQueue() {
-       if (isEmpty()) {
+		if (isEmpty() == true) {
 			return false;
-       }
-       if (lp==datas.length-1){
-       	    lp = 0;
-       }
-       lp++;
-       return true;
+		}
+		if (head == tail) {
+			head = -1;
+			tail = -1;
+			return true;
+		}
+		head = (head + 1) % size;
+		return true;
 	}
 
 	/** Get the front item from the queue. */
 	public int Front() {
-		if (isEmpty()){
+		if (isEmpty() == true) {
 			return -1;
 		}
-     return datas[fp];
+		return data[head];
 	}
 
 	/** Get the last item from the queue. */
 	public int Rear() {
-		if (isEmpty()){
+		if (isEmpty() == true) {
 			return -1;
 		}
-		return datas[lp];
+		return data[tail];
 	}
 
 	/** Checks whether the circular queue is empty or not. */
 	public boolean isEmpty() {
-		if (datas.length == 0){
-			return true;
-		}
-      return false;
+		return head == -1;
 	}
 
 	/** Checks whether the circular queue is full or not. */
 	public boolean isFull() {
-		if (datas.length==length){
-			return true;
-		}
-		return false;
+		return ((tail + 1) % size) == head;
 	}
 }

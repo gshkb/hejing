@@ -1,6 +1,4 @@
-package cn.gshkb.queue;
-
-import java.util.*;
+package cn.gshkb.data_structure.queue;
 
 /**
  * 设计一个循环队列

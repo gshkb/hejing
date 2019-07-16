@@ -1,4 +1,4 @@
-package cn.gshkb.queue;
+package cn.gshkb.data_structure.queue;
 
 import java.util.*;
 

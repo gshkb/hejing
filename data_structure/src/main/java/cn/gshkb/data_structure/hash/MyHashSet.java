@@ -73,6 +73,7 @@ public class MyHashSet {
 		myHashSet.remove(2);
 		System.out.println(myHashSet.contains(2));
 
+		HashMap<String, Object> map = new HashMap<>();
 
 	}
 }

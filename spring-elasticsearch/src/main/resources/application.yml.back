@@ -1,0 +1,9 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch #默认为elasticsearch
+      cluster-nodes: localhost:9300
+      properties:
+        path:
+          logs: ./elasticsearch/log #elasticsearch日志存储
+          data: ./elasticsearch/data #elasticsearc数据存储

@@ -27,7 +27,7 @@ public class IDEADemo {
 	}
 	public static void bcIDEA() {
 		//TODO 这个示例有问题,jar导入失败
-		String src = "www.xttblog.com security idea";
+		String src = "github.com/w99699w@126.com/hejing/security idea";
 		try {
 			Security.addProvider(new BouncyCastleProvider());
 

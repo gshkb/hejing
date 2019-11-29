@@ -22,27 +22,35 @@ import java.util.concurrent.*;
  **/
 public class RSADemo {
 	public static void main(String[] args) throws Exception {
+		//初始化 生成公钥私钥对
 		Map<String, Key> keyMap     = initKey();
 		String           publicKey  = getPublicKey(keyMap);
 		String           privateKey = getPrivateKey(keyMap);
 
 		System.out.println(keyMap);
 		System.out.println("-----------------------------------");
-		System.out.println(publicKey);
+		System.out.println("公钥:"+publicKey);
 		System.out.println("-----------------------------------");
-		System.out.println(privateKey);
+		System.out.println("私钥:"+privateKey);
 		System.out.println("-----------------------------------");
-		byte[] encryptByPrivateKey = encryptByPrivateKey("123456".getBytes(), privateKey);
-		byte[] encryptByPublicKey = encryptByPublicKey("123456", publicKey);
+		// str
+		String str = "123456";
+		//私钥加密字节数组
+		byte[] encryptByPrivateKey = encryptByPrivateKey(str.getBytes(), privateKey);
+		//公钥加密字节数组
+		byte[] encryptByPublicKey = encryptByPublicKey(str, publicKey);
+
 		System.out.println(encryptByPrivateKey);
 		System.out.println("-----------------------------------");
 		System.out.println(encryptByPublicKey);
 		System.out.println("-----------------------------------");
+		//用私钥加密字节数字和私钥生成签名数据
 		String sign = sign(encryptByPrivateKey, privateKey);
-		System.out.println(sign);
+		System.out.println("签名数据:"+sign);
 		System.out.println("-----------------------------------");
+		//用公钥加密字节数据和公钥和签名数据进行验签
 		boolean verify = verify(encryptByPrivateKey, publicKey, sign);
-		System.out.println(verify);
+		System.out.println("验签:"+verify);
 		System.out.println("-----------------------------------");
 		byte[] decryptByPublicKey = decryptByPublicKey(encryptByPrivateKey, publicKey);
 		byte[] decryptByPrivateKey = decryptByPrivateKey(encryptByPublicKey, privateKey);

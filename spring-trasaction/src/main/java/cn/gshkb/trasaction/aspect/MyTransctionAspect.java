@@ -1,6 +1,6 @@
 package cn.gshkb.trasaction.aspect;
 
-import cn.gshkb.trasaction.service.*;
+
 import org.aspectj.lang.*;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.*;
@@ -11,15 +11,15 @@ import org.springframework.stereotype.*;
  **/
 @Aspect
 @Component
-public class MyTransctionAspect implements Orders {
+public class MyTransctionAspect /**implements Orders**/ {
 
-	@Around("@annotation(cn.gshkb.trasaction.annotation.MyTransactional)")
+	//@Around("@annotation(cn.gshkb.trasaction.MyTransactional)")
 	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
 		//多层切面的优先级的问题
 			joinPoint.proceed();
 	}
 
-	@Override
+	//@Override
 	public int getOrder() {
 		return 0;
 	}

@@ -26,9 +26,9 @@ public class DesDemo {
 	// 测试
 	public static void main(String args[]) {
 		// 待加密内容
-		String str = "cryptology";
+		String str = "cryptology898722989798967868";
 		// 密码，长度要是8的倍数
-		String password = "11112222";
+		String password = "111122223333444455556666777788889999aaaabbbbccccddddeeeeffffgggg";
 
 		byte[] result;
 		try {
@@ -58,6 +58,7 @@ public class DesDemo {
 	public static byte[] encrypt(byte[] datasource, String password) {
 		try {
 			SecureRandom random = new SecureRandom();
+
 			DESKeySpec desKey = new DESKeySpec(password.getBytes());
 			// 创建一个密匙工厂，然后用它把DESKeySpec转换成
 			SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");

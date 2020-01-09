@@ -2,5 +2,5 @@ package cn.gshkb.hejing.interview.jdk_proxy;
 
 public interface Hello {
 
-	String sayHello(String str);
+    String sayHello(String str);
 }

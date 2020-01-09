@@ -11,16 +11,17 @@ import org.springframework.stereotype.*;
  **/
 @Aspect
 @Component
-public class MyTransctionAspect /**implements Orders**/ {
+public class MyTransctionAspect /**implements Orders**/
+{
 
-	//@Around("@annotation(cn.gshkb.trasaction.MyTransactional)")
-	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
-		//多层切面的优先级的问题
-			joinPoint.proceed();
-	}
+    //@Around("@annotation(cn.gshkb.trasaction.MyTransactional)")
+    public void around(ProceedingJoinPoint joinPoint) throws Throwable {
+        //多层切面的优先级的问题
+        joinPoint.proceed();
+    }
 
-	//@Override
-	public int getOrder() {
-		return 0;
-	}
+    //@Override
+    public int getOrder() {
+        return 0;
+    }
 }

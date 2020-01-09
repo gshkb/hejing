@@ -16,23 +16,23 @@ import java.util.List;
 @SpringBootTest
 public class ActivemqApplicationTests {
 
-	@Autowired
-	private Producer producer;
+    @Autowired
+    private Producer producer;
 
-	@Test
-	public void contextLoads() throws InterruptedException {
-		Destination destination = new ActiveMQQueue("mytest.queue");
+    @Test
+    public void contextLoads() throws InterruptedException {
+        Destination destination = new ActiveMQQueue("mytest.queue");
 
-		for(int i=0; i<100; i++){
-			producer.sendMessage(destination, "myname is chhliu!!!");
-		}
+        for (int i = 0; i < 100; i++) {
+            producer.sendMessage(destination, "myname is chhliu!!!");
+        }
 
-	}
+    }
 
     /**
-     *<P>
-     *     final 关键字的测试
-     *</P>
+     * <p>
+     * final 关键字的测试
+     * </P>
      */
     @Test
     public void testFinal() {
@@ -44,7 +44,7 @@ public class ActivemqApplicationTests {
             System.out.println(s);
         }
 
-        final User user = new User("李四",11);
+        final User user = new User("李四", 11);
         System.out.println(user);
     }
 

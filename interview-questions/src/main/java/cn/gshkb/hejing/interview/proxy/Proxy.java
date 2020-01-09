@@ -6,18 +6,18 @@ package cn.gshkb.hejing.interview.proxy;
  * @author hkb
  * @create 2019-04-22 15:15 v1.0
  **/
-public class Proxy implements IProxy{
+public class Proxy implements IProxy {
 
-	private IProxy target;
+    private IProxy target;
 
-	public Proxy(IProxy  target){
-		this.target = target;
-	}
+    public Proxy(IProxy target) {
+        this.target = target;
+    }
 
-	@Override
-	public void execute() {
-		System.out.println("execute proxy before");
-		target.execute();
-		System.out.println("execute proxy after");
-	}
+    @Override
+    public void execute() {
+        System.out.println("execute proxy before");
+        target.execute();
+        System.out.println("execute proxy after");
+    }
 }

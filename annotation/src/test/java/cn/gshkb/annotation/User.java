@@ -10,8 +10,8 @@ import lombok.Data;
 @Data
 public class User {
 
-	@PropertyAnnotation(name = "姓名",value = "张三",sort = 0)
-	private String name;
-	@PropertyAnnotation(name = "年龄",value = "18",sort = 1)
-	private Integer age;
+    @PropertyAnnotation(name = "姓名", value = "张三", sort = 0)
+    private String name;
+    @PropertyAnnotation(name = "年龄", value = "18", sort = 1)
+    private Integer age;
 }

@@ -13,10 +13,10 @@ import java.lang.annotation.*;
 @Documented
 public @interface PropertyAnnotation {
 
-	public String value() default "";
+    public String value() default "";
 
-	public int sort() default 0;
+    public int sort() default 0;
 
-	public  String name() default "";
+    public String name() default "";
 }
 

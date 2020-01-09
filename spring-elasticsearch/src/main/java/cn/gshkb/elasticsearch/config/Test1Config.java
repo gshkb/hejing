@@ -18,28 +18,28 @@ import java.net.*;
 public class Test1Config {
 
 
-	@Bean
-	public TransportClient client() throws UnknownHostException {
+    @Bean
+    public TransportClient client() throws UnknownHostException {
 
-		// 指定集群名,默认为elasticsearch,如果改了集群名,这里一定要加
-		Settings settings = Settings.builder()
-				.put("cluster.name", "elasticsearch")
-				.build();
+        // 指定集群名,默认为elasticsearch,如果改了集群名,这里一定要加
+        Settings settings = Settings.builder()
+                .put("cluster.name", "elasticsearch")
+                .build();
 
-		TransportClient client = new PreBuiltTransportClient(settings);
+        TransportClient client = new PreBuiltTransportClient(settings);
 
         /*
         ES的TCP端口为9300,而不是之前练习的HTTP端口9200
         这里只配置了一个节点的地址然添加进去,也可以配置多个从节点添加进去再返回
          */
-		TransportAddress node = new TransportAddress(
-				InetAddress.getByName("localhost"),
-				9300
-		);
-		client.addTransportAddress(node);
+        TransportAddress node = new TransportAddress(
+                InetAddress.getByName("localhost"),
+                9300
+        );
+        client.addTransportAddress(node);
 
-		return client;
-	}
+        return client;
+    }
 }
 
 

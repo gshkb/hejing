@@ -19,52 +19,52 @@ import java.util.*;
 public class MyQueue {
 
 
-	// store elements
-	private List<Integer> data;
-	// a pointer to indicate the start position
-	private int           p_start;
+    // store elements
+    private List<Integer> data;
+    // a pointer to indicate the start position
+    private int p_start;
 
-	public MyQueue() {
-		data = new ArrayList<Integer>();
-		p_start = 0;
-	}
+    public MyQueue() {
+        data = new ArrayList<Integer>();
+        p_start = 0;
+    }
 
-	/**
-	 * Insert an element into the queue. Return true if the operation is successful.
-	 */
-	public boolean enQueue(int x) {
-		data.add(x);
-		return true;
-	}
-
-
-	/**
-	 * Delete an element from the queue. Return true if the operation is successful.
-	 */
-	public boolean deQueue() {
-		if (isEmpty() == true) {
-			return false;
-		}
-		p_start++;
-		return true;
-	}
-
-	/**
-	 * Get the front item from the queue.
-	 */
-	public int Front() {
-		return data.get(p_start);
-	}
-
-	/**
-	 * Checks whether the queue is empty or not.
-	 */
-	public boolean isEmpty() {
-		return p_start >= data.size();
-	}
+    /**
+     * Insert an element into the queue. Return true if the operation is successful.
+     */
+    public boolean enQueue(int x) {
+        data.add(x);
+        return true;
+    }
 
 
-	public static void main(String[] args) {
+    /**
+     * Delete an element from the queue. Return true if the operation is successful.
+     */
+    public boolean deQueue() {
+        if (isEmpty() == true) {
+            return false;
+        }
+        p_start++;
+        return true;
+    }
+
+    /**
+     * Get the front item from the queue.
+     */
+    public int Front() {
+        return data.get(p_start);
+    }
+
+    /**
+     * Checks whether the queue is empty or not.
+     */
+    public boolean isEmpty() {
+        return p_start >= data.size();
+    }
+
+
+    public static void main(String[] args) {
 	/*	MyQueue q = new MyQueue();
 		q.enQueue(5);
 		q.enQueue(4);
@@ -91,7 +91,7 @@ public class MyQueue {
 			System.out.println(q.Front());
 		}*/
 
-		// 1. Initialize a queue.
+        // 1. Initialize a queue.
 		/*Queue<Integer> q = new LinkedList();
 		// 2. Get the first element - return null if queue is empty.
 		System.out.println("The first element is: " + q.peek());
@@ -116,11 +116,10 @@ public class MyQueue {
 		System.out.println("The first element is: " + q.peek());
 		// 7. Get the size of the queue.
 		System.out.println("The size is: " + q.size());*/
-		for (int i = 0;i<99;i++){
-			System.out.println(i%99);
-		}
-	}
-
+        for (int i = 0; i < 99; i++) {
+            System.out.println(i % 99);
+        }
+    }
 
 
 }

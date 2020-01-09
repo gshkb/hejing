@@ -22,30 +22,30 @@ import java.util.*;
  **/
 class Demo1 {
 
-	public int[] twoSum(int[] nums, int target) {
-		int[] a = new int[2];
-		for (int i = 0; i < nums.length; i++) {
-			int k = nums[i];
-			for (int j = i + 1; j < nums.length; j++) {
-				int m = nums[j];
-				if (k + m == target) {
-					a[0] = i;
-					a[1] = j;
-					return a;
-				}
-			}
-		}
-		return null;
-	}
+    public int[] twoSum(int[] nums, int target) {
+        int[] a = new int[2];
+        for (int i = 0; i < nums.length; i++) {
+            int k = nums[i];
+            for (int j = i + 1; j < nums.length; j++) {
+                int m = nums[j];
+                if (k + m == target) {
+                    a[0] = i;
+                    a[1] = j;
+                    return a;
+                }
+            }
+        }
+        return null;
+    }
 
-	public int[] twoSum1(int[] nums, int target) {
-		HashMap<Integer, Integer> map = new HashMap<>();
-		for (int i = 0; i < nums.length; i++) {
-			map.put(nums[i], i);
-			if (map.containsKey(target - nums[i])) {
-				return new int[]{i, map.get(target - nums[i])};
-			}
-		}
-		throw new IllegalArgumentException("No two sum solution");
-	}
+    public int[] twoSum1(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], i);
+            if (map.containsKey(target - nums[i])) {
+                return new int[]{i, map.get(target - nums[i])};
+            }
+        }
+        throw new IllegalArgumentException("No two sum solution");
+    }
 }

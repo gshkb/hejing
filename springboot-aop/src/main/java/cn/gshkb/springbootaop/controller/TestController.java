@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class TestController {
 
-	@RequestMapping("/test1")
-	@ResponseBody
-	public void test(){
+    @RequestMapping("/test1")
+    @ResponseBody
+    public void test() {
 
-	}
+    }
 
 }

@@ -8,8 +8,8 @@ package cn.gshkb.hejing.interview.proxy;
  **/
 public class Test {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         IProxy iProxy = new Proxy(new Target());
         iProxy.execute();
-	}
+    }
 }

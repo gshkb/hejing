@@ -8,7 +8,7 @@ package cn.gshkb.hejing.interview.cglib_proxy;
  **/
 public class HelloConcrete {
 
-	public String sayHello(String str) {
-		return "HelloConcrete: " + str;
-	}
+    public String sayHello(String str) {
+        return "HelloConcrete: " + str;
+    }
 }

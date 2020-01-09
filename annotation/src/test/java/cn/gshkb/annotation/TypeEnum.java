@@ -2,5 +2,5 @@ package cn.gshkb.annotation;
 
 public enum TypeEnum {
 
-	ADD, UPDATE, INSERT, QUERY
+    ADD, UPDATE, INSERT, QUERY
 }

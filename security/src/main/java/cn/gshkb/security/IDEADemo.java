@@ -22,36 +22,37 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
  * @create 2019-03-20 20:38 v1.0
  **/
 public class IDEADemo {
-	public static void main(String args[]) {
-		bcIDEA();
-	}
-	public static void bcIDEA() {
-		//TODO 这个示例有问题,jar导入失败
-		String src = "github.com/w99699w@126.com/hejing/security idea";
-		try {
-			Security.addProvider(new BouncyCastleProvider());
+    public static void main(String args[]) {
+        bcIDEA();
+    }
 
-			//生成key
-			KeyGenerator keyGenerator = KeyGenerator.getInstance("IDEA");
-			keyGenerator.init(128);
-			SecretKey secretKey = keyGenerator.generateKey();
-			byte[] keyBytes = secretKey.getEncoded();
+    public static void bcIDEA() {
+        //TODO 这个示例有问题,jar导入失败
+        String src = "github.com/w99699w@126.com/hejing/security idea";
+        try {
+            Security.addProvider(new BouncyCastleProvider());
 
-			//转换密钥
-			Key key = new SecretKeySpec(keyBytes, "IDEA");
+            //生成key
+            KeyGenerator keyGenerator = KeyGenerator.getInstance("IDEA");
+            keyGenerator.init(128);
+            SecretKey secretKey = keyGenerator.generateKey();
+            byte[] keyBytes = secretKey.getEncoded();
 
-			//加密
-			Cipher cipher = Cipher.getInstance("IDEA/ECB/ISO10126Padding");
-			cipher.init(Cipher.ENCRYPT_MODE, key);
-			byte[] result = cipher.doFinal(src.getBytes());
-			System.out.println("bc idea encrypt : " + Base64.encodeBase64String(result));
+            //转换密钥
+            Key key = new SecretKeySpec(keyBytes, "IDEA");
 
-			//解密
-			cipher.init(Cipher.DECRYPT_MODE, key);
-			result = cipher.doFinal(result);
-			System.out.println("bc idea decrypt : " + new String(result));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+            //加密
+            Cipher cipher = Cipher.getInstance("IDEA/ECB/ISO10126Padding");
+            cipher.init(Cipher.ENCRYPT_MODE, key);
+            byte[] result = cipher.doFinal(src.getBytes());
+            System.out.println("bc idea encrypt : " + Base64.encodeBase64String(result));
+
+            //解密
+            cipher.init(Cipher.DECRYPT_MODE, key);
+            result = cipher.doFinal(result);
+            System.out.println("bc idea decrypt : " + new String(result));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

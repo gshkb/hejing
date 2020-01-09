@@ -1,7 +1,6 @@
 package cn.gshkb.annotation.annotation;
 
 
-
 import java.lang.annotation.*;
 import java.util.Date;
 
@@ -17,10 +16,12 @@ import java.util.Date;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MethodAnnotation {
 
-  public enum TypeEnum{ ADD,INSERT,UPDATE,QUERY};
+    public enum TypeEnum {ADD, INSERT, UPDATE, QUERY}
 
-   public String name() default  "";
+    ;
 
-   public TypeEnum type() ;
+    public String name() default "";
+
+    public TypeEnum type();
 
 }

@@ -12,12 +12,12 @@ import org.springframework.aop.framework.*;
  **/
 public class Test {
 
-	public static void main(String[] args) {
-		HelloConcrete hello      = new HelloConcrete();
-		MythodInterceptor  cglibProxy = new MythodInterceptor();
-		HelloConcrete         proxy      = (HelloConcrete) cglibProxy.createProxy(hello);
-		String        result     =proxy.sayHello("  cglib say hello");
-		System.out.println(result);
+    public static void main(String[] args) {
+        HelloConcrete hello = new HelloConcrete();
+        MythodInterceptor cglibProxy = new MythodInterceptor();
+        HelloConcrete proxy = (HelloConcrete) cglibProxy.createProxy(hello);
+        String result = proxy.sayHello("  cglib say hello");
+        System.out.println(result);
 
-	}
+    }
 }

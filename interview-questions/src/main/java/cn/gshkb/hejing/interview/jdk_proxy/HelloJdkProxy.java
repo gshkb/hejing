@@ -10,19 +10,19 @@ import java.lang.reflect.*;
  **/
 public class HelloJdkProxy implements InvocationHandler {
 
-	private Hello hello;
+    private Hello hello;
 
-	public HelloJdkProxy(HelloTarget helloTarget) {
-		this.hello=helloTarget;
-	}
+    public HelloJdkProxy(HelloTarget helloTarget) {
+        this.hello = helloTarget;
+    }
 
-	@Override
-	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-		System.out.println("start invoke");
-		if (method.getName().equals("sayHello")){
-			System.out.println("start sayHello");
-		}
-		return method.invoke(hello,args);
-	}
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("start invoke");
+        if (method.getName().equals("sayHello")) {
+            System.out.println("start sayHello");
+        }
+        return method.invoke(hello, args);
+    }
 
 }

@@ -7,8 +7,8 @@ package cn.gshkb.trasaction.transactional;
 
 public class MyTransaction {
 
-	private String groupId;
-	//private TransactionType transactionType;
-	private String type;
+    private String groupId;
+    //private TransactionType transactionType;
+    private String type;
 
 }

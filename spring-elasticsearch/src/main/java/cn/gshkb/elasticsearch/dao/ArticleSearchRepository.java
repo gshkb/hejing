@@ -2,6 +2,7 @@ package cn.gshkb.elasticsearch.dao;
 
 /*import cn.gshkb.elasticsearch.model.*;
 import org.springframework.data.elasticsearch.repository.*;*/
+
 import org.springframework.stereotype.*;
 
 /**

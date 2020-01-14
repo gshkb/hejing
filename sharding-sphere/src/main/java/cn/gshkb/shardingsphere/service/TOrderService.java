@@ -1,9 +1,11 @@
 package cn.gshkb.shardingsphere.service;
 
 
+import cn.gshkb.shardingsphere.business.pojo.TOrderBizPojo;
 import cn.gshkb.shardingsphere.business.pojo.TOrderPojo;
 import cn.gshkb.shardingsphere.repository.TOrderRepository;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import java.util.List;
@@ -17,7 +19,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
-import static cn.gshkb.shardingsphere.domain.Tables.*;/**
+import static cn.gshkb.shardingsphere.domain.Tables.*;
+/**
  * 订单
  */
 @Slf4j
@@ -56,5 +59,19 @@ public class TOrderService  {
         dbPojo.setDelFlag(true);
         tOrderRepository.update(dbPojo);
         log.info("删除订单成功。{}。", dbPojo.toString());
+    }
+
+    /**
+     * 分组连表查询
+     * @return
+     */
+    public List<TOrderBizPojo> findByJoin() {
+        List<TOrderBizPojo> list = new ArrayList<>();
+        try{
+            list= tOrderRepository.findByJoin();
+        }catch (Exception e){
+            log.error("分组连表查询异常",e);
+        }
+      return  list;
     }
 }

@@ -1,8 +1,10 @@
 package cn.gshkb.shardingsphere.business.controller;
 
 
+import cn.gshkb.shardingsphere.business.pojo.TOrderBizPojo;
 import cn.gshkb.shardingsphere.business.pojo.TOrderPojo;
 import cn.gshkb.shardingsphere.common.ResultDo;
+import cn.gshkb.shardingsphere.domain.tables.TOrder;
 import cn.gshkb.shardingsphere.service.TOrderService;
 
 import com.google.common.collect.Lists;
@@ -51,9 +53,11 @@ public class TOrderController  {
     @RequestMapping(value = "indexPage", method = RequestMethod.GET)
     @RequiresPermissions("tOrder:indexPage")
     @ResponseBody
-    public ResultDo<Page> indexPage(@PageableDefault(sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+    public ResultDo<Page> indexPage(@PageableDefault(sort = "id", direction = Sort.Direction.DESC) Pageable pageable
+                                    ,TOrderPojo pojo) {
         ResultDo<Page> resultDo = ResultDo.build();
         Collection<Condition> collections = Lists.newArrayList();
+        collections.add(TOrder.T_ORDER.ID.eq(pojo.getId()));
         Page<TOrderPojo> page =tOrderService.findbyPageAndCondition(pageable, collections);
         resultDo.setResult(page);
         return resultDo;
@@ -98,6 +102,7 @@ public class TOrderController  {
         resultDo.setResult(pojo);
         return resultDo;
     }
+
     @ApiOperation(value = "订单删除", notes = "对应权限项:tOrder:delete")
     @RequestMapping(value = "delete/{id}", method = RequestMethod.POST)
     @RequiresPermissions("tOrder:delete")
@@ -105,6 +110,17 @@ public class TOrderController  {
     public ResultDo delete(@PathVariable Long id){
         ResultDo resultDo = ResultDo.build();
         tOrderService.delete(id);
+        return resultDo;
+    }
+
+    @ApiOperation(value = "分组连表查询", notes = "对应权限项:tOrder:delete")
+    @RequestMapping(value = "findByJoin", method = RequestMethod.GET)
+    @RequiresPermissions("tOrder:delete")
+    @ResponseBody
+    public ResultDo findByJoin(){
+        ResultDo resultDo = ResultDo.build();
+        List<TOrderBizPojo>list = tOrderService.findByJoin();
+        resultDo.setResult(list);
         return resultDo;
     }
 }

@@ -1,0 +1,54 @@
+spring:
+  shardingsphere:
+    dataSources:
+      ds0: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/ds0?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+        username: useradmin
+        password: 123456
+      ds1: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/ds1?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+        username: useradmin
+        password: 123456
+
+    shardingRule:
+      tables:
+        t_order:
+          actualDataNodes: ds${0..1}.t_order${0..1}
+          databaseStrategy:
+            inline:
+              shardingColumn: user_id
+              algorithmExpression: ds${user_id % 2}
+          tableStrategy:
+            inline:
+              shardingColumn: order_id
+              algorithmExpression: t_order${order_id % 2}
+          keyGenerator:
+            type: SNOWFLAKE
+            column: order_id
+        t_order_item:
+          actualDataNodes: ds${0..1}.t_order_item${0..1}
+          databaseStrategy:
+            inline:
+              shardingColumn: user_id
+              algorithmExpression: ds${user_id % 2}
+          tableStrategy:
+            inline:
+              shardingColumn: order_id
+              algorithmExpression: t_order_item${order_id % 2}
+      bindingTables:
+        - t_order,t_order_item
+      broadcastTables:
+        - t_config
+
+      defaultDataSourceName: ds0
+      defaultTableStrategy:
+        none:
+      defaultKeyGenerator:
+        type: SNOWFLAKE
+        column: order_id
+
+    props:
+      sql.show: true
+

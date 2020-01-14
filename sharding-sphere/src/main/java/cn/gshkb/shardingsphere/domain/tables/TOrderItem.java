@@ -42,7 +42,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TOrderItem extends TableImpl<TOrderItemRecord> {
 
-    private static final long serialVersionUID = 1718179971;
+    private static final long serialVersionUID = -129107131;
 
     /**
      * The reference instance of <code>ds.t_order_item</code>
@@ -65,12 +65,12 @@ public class TOrderItem extends TableImpl<TOrderItemRecord> {
     /**
      * The column <code>ds.t_order_item.user_id</code>. 用ID
      */
-    public final TableField<TOrderItemRecord, Integer> USER_ID = createField("user_id", org.jooq.impl.SQLDataType.INTEGER, this, "用ID");
+    public final TableField<TOrderItemRecord, Long> USER_ID = createField("user_id", org.jooq.impl.SQLDataType.BIGINT, this, "用ID");
 
     /**
      * The column <code>ds.t_order_item.order_id</code>. 订单ID
      */
-    public final TableField<TOrderItemRecord, Integer> ORDER_ID = createField("order_id", org.jooq.impl.SQLDataType.INTEGER, this, "订单ID");
+    public final TableField<TOrderItemRecord, Long> ORDER_ID = createField("order_id", org.jooq.impl.SQLDataType.BIGINT, this, "订单ID");
 
     /**
      * The column <code>ds.t_order_item.name</code>. 姓名

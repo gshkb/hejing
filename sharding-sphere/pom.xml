@@ -82,17 +82,17 @@
             <version>2.21.0.Final</version>
         </dependency>
         <!--sharding分库分表-->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.apache.shardingsphere</groupId>
             <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
             <version>${sharding-sphere.version}</version>
         </dependency>
-        <!-- for spring namespace -->
+        &lt;!&ndash; for spring namespace &ndash;&gt;
         <dependency>
             <groupId>org.apache.shardingsphere</groupId>
             <artifactId>sharding-jdbc-spring-namespace</artifactId>
             <version>${sharding-sphere.version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

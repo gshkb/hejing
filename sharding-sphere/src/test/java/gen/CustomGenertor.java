@@ -6,7 +6,7 @@ import org.jooq.tools.*;
 
 
 /**
- * Created by hkb on 2016/12/10.
+ * @author hkb
  */
 public class CustomGenertor extends DefaultGeneratorStrategy {
 

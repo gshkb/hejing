@@ -5,8 +5,6 @@ package cn.gshkb.shardingsphere.domain;
 
 
 import cn.gshkb.shardingsphere.domain.tables.TOrder;
-import cn.gshkb.shardingsphere.domain.tables.TOrderItem;
-import cn.gshkb.shardingsphere.domain.tables.records.TOrderItemRecord;
 import cn.gshkb.shardingsphere.domain.tables.records.TOrderRecord;
 
 import javax.annotation.Generated;
@@ -35,14 +33,12 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     public static final Identity<TOrderRecord, Long> IDENTITY_T_ORDER = Identities0.IDENTITY_T_ORDER;
-    public static final Identity<TOrderItemRecord, Long> IDENTITY_T_ORDER_ITEM = Identities0.IDENTITY_T_ORDER_ITEM;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
     public static final UniqueKey<TOrderRecord> KEY_T_ORDER_PRIMARY = UniqueKeys0.KEY_T_ORDER_PRIMARY;
-    public static final UniqueKey<TOrderItemRecord> KEY_T_ORDER_ITEM_PRIMARY = UniqueKeys0.KEY_T_ORDER_ITEM_PRIMARY;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
@@ -55,11 +51,9 @@ public class Keys {
 
     private static class Identities0 {
         public static Identity<TOrderRecord, Long> IDENTITY_T_ORDER = Internal.createIdentity(TOrder.T_ORDER, TOrder.T_ORDER.ID);
-        public static Identity<TOrderItemRecord, Long> IDENTITY_T_ORDER_ITEM = Internal.createIdentity(TOrderItem.T_ORDER_ITEM, TOrderItem.T_ORDER_ITEM.ID);
     }
 
     private static class UniqueKeys0 {
         public static final UniqueKey<TOrderRecord> KEY_T_ORDER_PRIMARY = Internal.createUniqueKey(TOrder.T_ORDER, "KEY_t_order_PRIMARY", TOrder.T_ORDER.ID);
-        public static final UniqueKey<TOrderItemRecord> KEY_T_ORDER_ITEM_PRIMARY = Internal.createUniqueKey(TOrderItem.T_ORDER_ITEM, "KEY_t_order_item_PRIMARY", TOrderItem.T_ORDER_ITEM.ID);
     }
 }

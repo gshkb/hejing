@@ -17,7 +17,7 @@ import static gen.Config.*;
 
 
 /**
- * Created by hkb on 2017/3/7.
+ * @author hkb
  */
 public class CustomJavaGenerator extends JavaGenerator {
 
@@ -401,7 +401,7 @@ public class CustomJavaGenerator extends JavaGenerator {
         out.println();
         out.println();
 
-        //分页
+      /*  //分页
        out.tab(1).println("@ApiOperation(value = \"%s列表\", notes = \"对应权限项:%s:indexPage, " +
                 "url后跟&page=0&size=10&sort=排序字段,desc/asc\")", table.getComment(), modelName);
         out.tab(1).println("@RequestMapping(value = \"indexPage\", method = RequestMethod.GET)");
@@ -443,8 +443,8 @@ public class CustomJavaGenerator extends JavaGenerator {
            .println("@ApiOperation(value = \"%s新增\", notes = \"对应权限项:%s:create\")", table.getComment(), modelName);
         out.tab(1).println("@RequestMapping(value = \"create\", method = RequestMethod.POST)");
         out.tab(1).println("@RequiresPermissions(\"%s:create\")", modelName);
-       /* out.tab(1).println("@LogInfoAnnotation(moduleName = \"%s管理\", desc = \"%s新增\")", table.getComment(), table
-                .getComment());*/
+       *//* out.tab(1).println("@LogInfoAnnotation(moduleName = \"%s管理\", desc = \"%s新增\")", table.getComment(), table
+                .getComment());*//*
         out.tab(1).println("@ResponseBody");
         out.tab(1)
            .println("public ResultDo<%s> create( @Valid @RequestBody %s pojo){", out.ref(pojoClassName), out.ref(pojoClassName));
@@ -461,8 +461,8 @@ public class CustomJavaGenerator extends JavaGenerator {
            .println("@ApiOperation(value = \"%s修改\", notes = \"对应权限项:%s:update\")", table.getComment(), modelName);
         out.tab(1).println("@RequestMapping(value = \"update\", method = RequestMethod.POST)");
         out.tab(1).println("@RequiresPermissions(\"%s:update\")", modelName);
-        /*out.tab(1).println("@LogInfoAnnotation(moduleName = \"%s管理\", desc = \"%s修改\")", table.getComment(), table
-                .getComment());*/
+        *//*out.tab(1).println("@LogInfoAnnotation(moduleName = \"%s管理\", desc = \"%s修改\")", table.getComment(), table
+                .getComment());*//*
         out.tab(1).println("@ResponseBody");
         out.tab(1)
            .println("public ResultDo<%s>  update(@Valid @RequestBody %s pojo){", out.ref(pojoClassName), out.ref(pojoClassName));
@@ -477,14 +477,14 @@ public class CustomJavaGenerator extends JavaGenerator {
                 modelName);
         out.tab(1).println("@RequestMapping(value = \"delete/{id}\", method = RequestMethod.POST)");
         out.tab(1).println("@RequiresPermissions(\"%s:delete\")", modelName);
-       /* out.tab(1).println("@LogInfoAnnotation(moduleName = \"%s管理\", desc = \"%s删除\")", table.getComment(), table
-                .getComment());*/
+       *//* out.tab(1).println("@LogInfoAnnotation(moduleName = \"%s管理\", desc = \"%s删除\")", table.getComment(), table
+                .getComment());*//*
         out.tab(1).println("@ResponseBody");
         out.tab(1).println("public ResultDo delete(@PathVariable Long id){");
         out.tab(2).println("ResultDo resultDo = ResultDo.build();");
         out.tab(2).println("%s.delete(id);", serviceClassNameInstance);
         out.tab(2).println("return resultDo;");
-        out.tab(1).println("}");
+        out.tab(1).println("}");*/
         out.println("}");
         closeJavaWriter(out);
     }

@@ -42,7 +42,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TOrder extends TableImpl<TOrderRecord> {
 
-    private static final long serialVersionUID = 1361748736;
+    private static final long serialVersionUID = 907805981;
 
     /**
      * The reference instance of <code>ds.t_order</code>
@@ -85,12 +85,12 @@ public class TOrder extends TableImpl<TOrderRecord> {
     /**
      * The column <code>ds.t_order.version</code>. 版本号
      */
-    public final TableField<TOrderRecord, String> VERSION = createField("version", org.jooq.impl.SQLDataType.VARCHAR(255), this, "版本号");
+    public final TableField<TOrderRecord, Long> VERSION = createField("version", org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "版本号");
 
     /**
      * The column <code>ds.t_order.del_flag</code>. 删除标记
      */
-    public final TableField<TOrderRecord, Boolean> DEL_FLAG = createField("del_flag", org.jooq.impl.SQLDataType.BIT, this, "删除标记");
+    public final TableField<TOrderRecord, Boolean> DEL_FLAG = createField("del_flag", org.jooq.impl.SQLDataType.BIT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("b'0'", org.jooq.impl.SQLDataType.BIT)), this, "删除标记");
 
     /**
      * Create a <code>ds.t_order</code> table reference

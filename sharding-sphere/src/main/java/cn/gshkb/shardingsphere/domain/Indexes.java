@@ -5,7 +5,6 @@ package cn.gshkb.shardingsphere.domain;
 
 
 import cn.gshkb.shardingsphere.domain.tables.TOrder;
-import cn.gshkb.shardingsphere.domain.tables.TOrderItem;
 
 import javax.annotation.Generated;
 
@@ -32,7 +31,6 @@ public class Indexes {
     // -------------------------------------------------------------------------
 
     public static final Index T_ORDER_PRIMARY = Indexes0.T_ORDER_PRIMARY;
-    public static final Index T_ORDER_ITEM_PRIMARY = Indexes0.T_ORDER_ITEM_PRIMARY;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
@@ -40,6 +38,5 @@ public class Indexes {
 
     private static class Indexes0 {
         public static Index T_ORDER_PRIMARY = Internal.createIndex("PRIMARY", TOrder.T_ORDER, new OrderField[] { TOrder.T_ORDER.ID }, true);
-        public static Index T_ORDER_ITEM_PRIMARY = Internal.createIndex("PRIMARY", TOrderItem.T_ORDER_ITEM, new OrderField[] { TOrderItem.T_ORDER_ITEM.ID }, true);
     }
 }

@@ -5,7 +5,6 @@ package cn.gshkb.shardingsphere.domain;
 
 
 import cn.gshkb.shardingsphere.domain.tables.TOrder;
-import cn.gshkb.shardingsphere.domain.tables.TOrderItem;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +30,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Ds extends SchemaImpl {
 
-    private static final long serialVersionUID = -469600980;
+    private static final long serialVersionUID = 1967364464;
 
     /**
      * The reference instance of <code>ds</code>
@@ -42,11 +41,6 @@ public class Ds extends SchemaImpl {
      * 订单
      */
     public final TOrder T_ORDER = cn.gshkb.shardingsphere.domain.tables.TOrder.T_ORDER;
-
-    /**
-     * 订单详情
-     */
-    public final TOrderItem T_ORDER_ITEM = cn.gshkb.shardingsphere.domain.tables.TOrderItem.T_ORDER_ITEM;
 
     /**
      * No further instances allowed
@@ -73,7 +67,6 @@ public class Ds extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
-            TOrder.T_ORDER,
-            TOrderItem.T_ORDER_ITEM);
+            TOrder.T_ORDER);
     }
 }

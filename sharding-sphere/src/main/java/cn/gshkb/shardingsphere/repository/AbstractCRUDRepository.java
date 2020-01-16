@@ -58,11 +58,14 @@ public abstract class AbstractCRUDRepository<R extends UpdatableRecord, ID, P ex
                                                        .fetchOne(0, Long.class)
                 : dslContext.selectCount().from(table).fetchOne(0, Long.class);
 
-        List<P> pList = step
+        List<P> pList = new ArrayList<>();
+        if (total>0){
+            pList = step
                 .orderBy(getSortFields(pageable.getSort()))
                 .limit(pageable.getPageSize())
                 .offset(Long.valueOf(pageable.getOffset()).intValue())
                 .fetchInto(pojoClass);
+        }
         PageImpl<P> pPage = new PageImpl<P>(pList, pageable, total);
         return pPage;
     }

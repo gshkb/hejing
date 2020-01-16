@@ -38,14 +38,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jooq</artifactId>
+            <version>2.1.4.RELEASE</version>
         </dependency>
+        <!--jooq代码生成-->
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq-meta</artifactId>
+            <version>3.11.10</version>
         </dependency>
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq-codegen</artifactId>
+            <version>3.11.10</version>
         </dependency>
         <!-- flyway相关包 -->
       <!--  <dependency>

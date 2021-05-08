@@ -18,7 +18,7 @@
         <java.version>1.8</java.version>
         <sharding-sphere.version>4.0.0-RC3</sharding-sphere.version>
         <springfox.version>2.8.0</springfox.version>
-        <shiro.version>1.2.5</shiro.version>
+        <shiro.version>1.6.0</shiro.version>
     </properties>
     <dependencies>
         <dependency>
